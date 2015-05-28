@@ -1,0 +1,31 @@
+/*-------all-------------------------------------------------------*/
+/*-------all-------------------------------------------------------*/
+/*-------all-------------------------------------------------------*/
+/*-------all-------------------------------------------------------*/
+body {
+    background: url("../images/bg.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-transition: all 1s; /* Safari */
+    transition: all 1s;
+    -moz-transition: all 1s;
+    -o-transition: all 1s;
+}
+.logo
+{
+    margin-top: 15%;
+}
+.login
+{
+    height: 2rem;
+    border-radius: 5px;
+    border: none;
+    padding: 20px;
+}
+.login:focus
+{
+    border: none;
+}
