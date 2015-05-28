@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title Admin page
+        ink(href='/stylesheets/normalize.css', rel='stylesheet')
+        link(href='/stylesheets/foundation.css', rel='stylesheet')
+        link(href='/stylesheets/style.css', rel='stylesheet')
+        link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700,800', rel='stylesheet')
+        script(src="/javascripts/foundation.min.js")
+        script(src="javascripts/admin.js")
+
+    body
+        div.row
+            div.columns.large-12.text-center
+                h1 Hello, Admin!
+                table.columns.large-6.large-centered
+                    tbody
+                        each user, i in userlist
+                            tr
+                                td.panel
+                                    span ID:
+                                        =user.id
+                                    br
+                                    span Name:
+                                        =user.name
+                                    br
+                                    span Cash:
+                                        =user.cash
+                                    br
+                                    span Score:
+                                        =user.score
+                                    hr
+                div#adminstat
+                form(action="/start")
+                    button Let's play
+                    a.button.alert(href="/end") End Game

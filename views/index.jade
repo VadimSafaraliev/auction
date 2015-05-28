@@ -1,0 +1,42 @@
+doctype html
+html
+    head
+        title Auction game
+        link(href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,700,800', rel='stylesheet')
+        link(href='/stylesheets/normalize.css', rel='stylesheet')
+        link(href='/stylesheets/foundation.css', rel='stylesheet')
+        link(href='/stylesheets/style.css', rel='stylesheet')
+        script(src="/javascripts/foundation.min.js")
+        script(scr='/javascripts/jquery.js')
+        script(src="javascripts/my.js")
+    body
+        div.row
+            div.columns.large-12.text-center
+                h1.logo Welcome to our game!
+                    br
+                    if(usersoff)
+                        small Type your name
+        div.row.text-center
+            div.columns.large-6.large-centered
+                if(usersoff)
+                    form(method="get",action="/login").text-center
+                        div.row
+                            label
+                                input.login(placeholder="Your name", name="username")
+                            br
+                            button.button.small Login
+                else
+                    div.row
+                        div.panel.columns.large-6.large-centered
+                            h3 Your name:&nbsp
+                                =nameuser
+                            p Cash:&nbsp
+                                =cash
+                                form(action="/buy")
+                                    button BUY
+                                    br
+                                    if(wiskey)
+                                        a.button.tiny.alert(href="/buywiskey") BUY Wiskey
+                                if(error)
+                                    p Your need more money to bought this goods.
+                                div#id
